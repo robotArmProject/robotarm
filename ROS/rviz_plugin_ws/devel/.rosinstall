@@ -1,0 +1,2 @@
+- setup-file:
+    local-name: /home/bobo/rviz_plugin_ws/devel/setup.sh

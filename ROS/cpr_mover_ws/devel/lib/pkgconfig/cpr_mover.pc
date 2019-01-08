@@ -1,0 +1,8 @@
+prefix=/home/bobo/cpr_mover_ws/devel
+
+Name: cpr_mover
+Description: Description of cpr_mover
+Version: 0.1.0
+Cflags: 
+Libs: -L/home/bobo/cpr_mover_ws/devel/lib 
+Requires: actionlib_msgs

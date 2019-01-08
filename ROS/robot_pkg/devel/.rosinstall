@@ -1,0 +1,2 @@
+- setup-file:
+    local-name: /home/bobo/robot_pkg/devel/setup.sh
