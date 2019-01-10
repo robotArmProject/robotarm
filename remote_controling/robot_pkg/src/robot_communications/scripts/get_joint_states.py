@@ -7,11 +7,14 @@ from std_msgs.msg import Int32
 from std_msgs.msg import Int32MultiArray
 from sensor_msgs.msg import *
 
-current_joints = [0,0,0,0]
+#Global variables
+#current_joints6 = [0,0,0,0,0,0]
+current_joints = [0,0,0,0] 
 stop_command = False
 pub_joint = rospy.Publisher('CPRMoverJointVel', JointState, queue_size=10)
 pub_command = rospy.Publisher('CPRMoverCommands', String, queue_size=10)
 
+# DB connection
 mydb = mysql.connector.connect(
 	host="Hostname",
 	user="username",
@@ -21,6 +24,7 @@ mydb = mysql.connector.connect(
 
 mycursor = mydb.cursor()
 
+#Converts joint data to degree (approx)
 def convert_joints(joints):
 	return int((joints - 0.0024) / 0.0175)
 	
@@ -39,7 +43,7 @@ def update_position(data):
 	mydb.commit()
 	
 
-
+#init all topics
 def get_joint_states():
 	rospy.init_node('get_joint_states', anonymous=False)
 	rospy.Subscriber('joint_states', JointState, update_position)
@@ -101,12 +105,11 @@ def start_pos():
 	print "Joint 2 done"
 	target_dest(3, 0)
 	print "Joint 4 done"
-	#target_dest(0, 0)	bj	bb	jbkubk	bk	bb	k	bkb	b	k kommentera tillbaka det har
-	print "Joint 1 done"
 	pub_command.publish("GripperOpen")
 	print "Manipulator is in start position"
 
 #Stops the manipulator from moving any further
+#Note. Only affect joint movements
 def stop_manipulator(data):
 	global stop_command
 	stop_command = True
@@ -210,7 +213,7 @@ def create_message(joint, direction):
 		j4 = -50.0
 	else:
 		j4 = 0.0
-
+	#May be extend for joint with more than 4 joints
 	msg.velocity = [(j1), (j2), (j3), (j4), (0.0), (0.0)]
 	return msg
 
