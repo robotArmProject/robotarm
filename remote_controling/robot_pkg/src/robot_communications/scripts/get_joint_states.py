@@ -13,10 +13,10 @@ pub_joint = rospy.Publisher('CPRMoverJointVel', JointState, queue_size=10)
 pub_command = rospy.Publisher('CPRMoverCommands', String, queue_size=10)
 
 mydb = mysql.connector.connect(
-	host="utbweb.its.ltu.se",
-	user="nadhan-4",
-	passwd="bobosugerhart",
-	database="nadhan4db"
+	host="Hostname",
+	user="username",
+	passwd="psw",
+	database="dbname"
 )
 
 mycursor = mydb.cursor()
