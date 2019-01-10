@@ -11,13 +11,13 @@ NOTE: You might need to use hamachi since JS is a client based language therefor
 
 ###################################################################################################
 
-All ROS code is included in the folder "ROS" we are using kinetic version
+All ROS code is included in the folder "ROS" we are using kinetic version  
 WARNING: These are also configured on the local computer, making it impossible to run as-is. But the important nodes and libraries used are here, such as "cpr_mover" and "rviz". Rosbridge is a requirement for processing outbound connections and turn it into ROS-code.
-If you want to use our code as a base download the nodes from:
-cpr_mover: https://github.com/CPR-Robots/cpr_mover 
-rviz: https://github.com/ros-visualization/rviz/tree/kinetic-devel
-rosbridge: https://github.com/RobotWebTools/rosbridge_suite/tree/master 
-USB PCAN Drivers for CPR mover: https://www.peak-system.com/forum/viewtopic.php?f=59&t=256 
+If you want to use our code as a base download the nodes from:  
+cpr_mover: https://github.com/CPR-Robots/cpr_mover  
+rviz: https://github.com/ros-visualization/rviz/tree/kinetic-devel  
+rosbridge: https://github.com/RobotWebTools/rosbridge_suite/tree/master   
+USB PCAN Drivers for CPR mover: https://www.peak-system.com/forum/viewtopic.php?f=59&t=256   
 
 ###################################################################################################
 
