@@ -101,14 +101,14 @@ else{
 	    name : '/manual_target',
 	    messageType : 'std_msgs/Int32MultiArray'
 	  });
-	  var twist = new ROSLIB.Message({
+	  var target_mess = new ROSLIB.Message({
 		data: 
 			[parseInt(document.getElementById("string1").value) , parseInt(document.getElementById("string2").value) , parseInt(document.getElementById("string3").value) , parseInt(document.getElementById("string4").value)]
 			//insert data
 
 		});
-		console.log(twist.data);
-	  robotControl.publish(twist);
+		console.log(target_mess.data);
+	  robotControl.publish(target_mess);
 	}
 	function jointMove(j,v) {
 	  var action = "Moving joint"+j+"in direction:"+v;
