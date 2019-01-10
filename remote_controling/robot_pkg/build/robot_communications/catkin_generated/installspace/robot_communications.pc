@@ -1,0 +1,8 @@
+prefix=/home/bobo/robot_pkg/install
+
+Name: robot_communications
+Description: Description of robot_communications
+Version: 0.1.0
+Cflags: 
+Libs: -L/home/bobo/robot_pkg/install/lib 
+Requires: 
